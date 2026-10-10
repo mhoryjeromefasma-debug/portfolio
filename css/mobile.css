@@ -1,0 +1,40 @@
+/* =====================================================
+   MOBILE = ONE LONG SCROLL  (phones: no tapping Next/Prev)
+   Desktop keeps the separate pages; this file only changes
+   how things look on small screens + the Home avatar rule.
+   ===================================================== */
+
+/* sections are only for phones */
+.m-sections{display:none}
+
+/* ---- Home: the small avatar is hidden (the big photo is already there) ---- */
+@keyframes brandIn{from{opacity:0;transform:scale(.6) translateX(-.6rem)}to{opacity:1;transform:none}}
+@media(min-width:901px){
+  /* keep the avatar's space reserved on Home so the name/menu never jump between pages */
+  body[data-page="home"] .side .brand{visibility:hidden}
+}
+
+@media(max-width:900px){
+  body[data-page="home"]:not(.scrolled) .topbar .brand{visibility:hidden}
+  body[data-page="home"].scrolled .topbar .brand{animation:brandFade .4s ease backwards}
+  @keyframes brandFade{from{opacity:0}to{opacity:1}}
+
+  .pager{display:none!important}
+
+  .m-sections{display:block;position:relative;z-index:1}
+  .msec{scroll-margin-top:4.2rem;padding-top:3.2rem;margin-top:2.4rem;border-top:1px solid var(--line)}
+  .msec .page-body{margin-top:.4rem}
+
+  /* reveal each block as you scroll to it */
+  .m-sections .a{opacity:0;animation:none!important}
+  .m-sections .a.in{opacity:1;animation:rise .8s var(--ease) both!important;animation-delay:calc(var(--d,0s)*.4)!important}
+  .m-sections .a.in.l{animation-name:riseL!important}
+  .m-sections .a.in.r{animation-name:riseR!important}
+  .m-sections .a.in.z{animation-name:zoom!important}
+  /* the filter animation in projects.js removes .a/.z, so keep cards visible then */
+  .m-sections .project:not(.a){opacity:1}
+}
+@media(max-width:900px) and (prefers-reduced-motion:reduce){
+  .m-sections .a{opacity:1}
+}
+html{scroll-behavior:auto}

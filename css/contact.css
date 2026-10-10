@@ -6,7 +6,7 @@
 .clines{margin-top:1.2rem}
 .cline{display:flex;align-items:center;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:.9rem;overflow-wrap:anywhere}
 .cline:first-child{border-top:1px solid var(--line)}
-.cline em{font-style:normal;width:2.3rem;height:2.3rem;border-radius:.7rem;display:grid;place-items:center;background:rgba(255,214,10,.08);color:var(--y);flex:none}
+.cline em{font-style:normal;width:2.3rem;height:2.3rem;border-radius:.7rem;display:grid;place-items:center;background:rgba(255,106,0,.08);color:var(--y);flex:none}
 .cline small{display:block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--m);line-height:1.3}
 .contact-card .btn{margin-top:auto;align-self:flex-start}
 
@@ -17,7 +17,7 @@
 .field textarea{height:100%;min-height:5rem;resize:none}
 .field.grow{flex:1;min-height:0}
 .field label{position:absolute;left:1.1rem;top:1rem;font-size:.88rem;color:var(--m);pointer-events:none;transition:all .3s var(--ease)}
-.field input:focus,.field textarea:focus{border-color:var(--y);background:rgba(255,214,10,.03);box-shadow:0 0 0 .25rem rgba(255,214,10,.08)}
+.field input:focus,.field textarea:focus{border-color:var(--y);background:rgba(255,106,0,.03);box-shadow:0 0 0 .25rem rgba(255,106,0,.08)}
 .field input:focus+label,.field input:not(:placeholder-shown)+label,.field textarea:focus+label,.field textarea:not(:placeholder-shown)+label{top:.4rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--y)}
 .form-foot{display:flex;align-items:center;gap:1.2rem}
 .note{font-size:.72rem;color:var(--m);line-height:1.4}
@@ -29,3 +29,7 @@
   .form-foot{flex-direction:column;align-items:flex-start}
   .contact-card .btn{margin-top:1.4rem}
 }
+
+/* breathing room above the Copy email button now that Social is listed */
+.contact .cline{padding:.62rem 0}
+.contact .clines{margin-bottom:1rem}
